@@ -19,7 +19,7 @@ export default function LectureSection({
         style={{ cursor: "pointer" }}
         onClick={() => setOpen(!open)}
       >
-        명사 특강 <span style={{color: lectureCount >= 2 ? "green" : "red"}}>{lectureCount}</span>/2
+        명사 특강 <span style={{color: lectureCount >= 2 ? "green" : "red"}}>{lectureCount}</span>/2회
       </h2>
 
       {open &&

@@ -19,7 +19,7 @@ export default function HouseSection({
         style={{ cursor: "pointer" }}
         onClick={() => setOpen(!open)}
       >
-        하우스 프로그램 <span style={{color: houseCount >= 1 ? "green" : "red"}}>{houseCount}</span>/1
+        하우스 프로그램 <span style={{color: houseCount >= 1 ? "green" : "red"}}>{houseCount}</span>/1회
       </h2>
 
       {open &&
