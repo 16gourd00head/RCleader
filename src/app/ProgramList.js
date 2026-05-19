@@ -145,7 +145,7 @@ export default function ProgramList({ programs }) {
             color: Number(CulSptCount) >= 7 ? "green" : "red",
           }}
         />
-        /10회 <span style={{color: Number(CulSptCount) >= 7 ? "green" : "red"}}>{Number(CulSptCount) >= 7 ? "P" : "NP"}</span>
+        /10회 <span style={{color: Number(CulSptCount) >= 7 && score >= 48? "green" : "red"}}>{Number(CulSptCount) >= 7 && score >= 48? "P" : "NP"}</span>
       </h2>
       <h2>
         하우스 분반활동{" "}
