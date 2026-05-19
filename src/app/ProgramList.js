@@ -4,6 +4,8 @@ import { useState } from "react";
 import HouseSection from "./HouseSection";
 import LectureSection from "./LectureSection";
 import OtherSection from "./OtherSection";
+import PESection from "./PESection";
+import OTSection from "./OTSection";
 
 export default function ProgramList({ programs }) {
   const [selected, setSelected] = useState([]);
@@ -15,6 +17,14 @@ export default function ProgramList({ programs }) {
         : [...prev, id]
     );
   };
+
+  const PECount = programs.filter(
+    (p) => p.type === "PE" && selected.includes(p._id)
+  ).length;
+
+  const OTCount = programs.filter(
+    (p) => p.type === "OT" && selected.includes(p._id)
+  ).length;
 
   const houseCount = programs.filter(
     (p) => p.type === "house" && selected.includes(p._id)
@@ -33,8 +43,32 @@ export default function ProgramList({ programs }) {
 
   const totalOtherTime = otherTime + houseExtra + lectureExtra;
 
+  const [CulSptCount, setCulSptCount] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+
+    if (/^\d*$/.test(value)) {
+      setCulSptCount(value);
+    }
+  };
+
   return (
     <div>
+      <PESection
+        programs={programs}
+        selected={selected}
+        handleCheck={handleCheck}
+        PECount={PECount}
+      />
+
+      <OTSection
+        programs={programs}
+        selected={selected}
+        handleCheck={handleCheck}
+        OTCount={OTCount > 1 ? 1 : OTCount}
+      />
+
       <HouseSection
         programs={programs}
         selected={selected}
@@ -55,6 +89,24 @@ export default function ProgramList({ programs }) {
         handleCheck={handleCheck}
         totalOtherTime={totalOtherTime}
       />
+
+      <h2>
+        RC문화체육 참여{" "}
+        <input
+          type="text"
+          value={CulSptCount}
+          onChange={handleChange}
+          style={{
+            border: "none",
+            outline: "none",
+            background: "transparent",
+            width: "40px",
+            font: "inherit",
+            color: Number(CulSptCount) >= 7 ? "green" : "red",
+          }}
+        />
+        /10회
+      </h2>
     </div>
   );
 }
