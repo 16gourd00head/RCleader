@@ -48,7 +48,7 @@ export default function ProgramList({ programs }) {
   const handleChange = (e) => {
     const value = e.target.value;
 
-    if (/^\d*$/.test(value)) {
+    if (/^\d*$/.test(value) && Number(value) <= 10) {
       setCulSptCount(value);
     }
   };
@@ -98,10 +98,13 @@ export default function ProgramList({ programs }) {
           onChange={handleChange}
           style={{
             border: "none",
-            outline: "none",
+            outline: "1px solid",
             background: "transparent",
-            width: "40px",
+            width: "30px",
             font: "inherit",
+            margin: "0 5px",
+            borderRadius: "4px",
+            textAlign: "center",
             color: Number(CulSptCount) >= 7 ? "green" : "red",
           }}
         />
