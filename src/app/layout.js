@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "RC리더십개발 비교과 계산기",
-  description: "RC리더십개발 프로그램의 하우스 프로그램, 명사 특강, 비교과 참여 시간을 계산하는 웹 애플리케이션입니다.",
+  title: "RC리더십개발 성적 계산기",
+  description: "RC리더십개발 프로그램의 하우스 프로그램, 명사 특강, 비교과 참여 시간 등을 성적으로 환산하는 웹 애플리케이션입니다.",
 };
 
 export default function RootLayout({ children }) {

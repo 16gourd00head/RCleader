@@ -19,7 +19,7 @@ export default function PESection({
         style={{ cursor: "pointer" }}
         onClick={() => setOpen(!open)}
       >
-        RC체육대회 <span style={{color: PECount >= 1 ? "green" : "red"}}>{PECount}</span>/1회
+        RC단체활동 <span style={{color: PECount >= 1 ? "green" : "red"}}>{PECount}</span>/1회
       </h2>
 
       {open &&
