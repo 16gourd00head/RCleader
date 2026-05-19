@@ -1,4 +1,4 @@
-export default function GradeGauge({ score, grade, color }) {
+export default function GradeGauge({ score, grade, color, time }) {
   const radius = 70;
   const stroke = 12;
   const normalizedRadius = radius - stroke / 2;
@@ -53,6 +53,9 @@ export default function GradeGauge({ score, grade, color }) {
         </div>
         <div style={{ fontSize: "14px" }}>
           {score}점
+        </div>
+        <div style={{ fontSize: "14px" }}>
+          시수: {time}
         </div>
       </div>
     </div>

@@ -90,7 +90,7 @@ export default function ProgramList({ programs }) {
 
   return (
     <div>
-      <GradeGauge score={score} grade={grade} color={color} />
+      <GradeGauge score={score} grade={grade} color={color} time={time} />
 
       <PESection
         programs={programs}
